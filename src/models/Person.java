@@ -2,16 +2,14 @@ package models;
 
 import java.time.LocalDate;
 
-public class Person implements Comparable<Person> {
+public class Person {
 
-    private String name;
-    private int ticketNummer;
-    private int age;
+    protected String name;
+    protected int age;
     private LocalDate birthDate;
 
-    public Person(String name, int ticketNummer, int age, LocalDate birthDate) {
+    public Person(String name, int age, LocalDate birthDate) {
         this.name = name;
-        this.ticketNummer = ticketNummer;
         this.age = age;
         this.birthDate = birthDate;
     }
@@ -23,15 +21,6 @@ public class Person implements Comparable<Person> {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getTicketNummer() {
-        return ticketNummer;
-    }
-
-    public void setTicketNummer(int ticketNummer) {
-        this.ticketNummer = ticketNummer;
-    }
-
     public int getAge() {
         return age;
     }
@@ -48,22 +37,10 @@ public class Person implements Comparable<Person> {
         this.birthDate = birthDate;
     }
 
+
     @Override
     public String toString() {
-        return "Person [name=" + name + ", ticketNummer=" + ticketNummer + ", age=" + age + ", birthDate=" + birthDate
-                + "]";
-    }
-
-    @Override
-    public int compareTo(Person otraPersona) {
-        // Compara las personas basándose en el número de ticket
-        return Integer.compare(this.ticketNummer, otraPersona.getTicketNummer());
-  
-    }
-
-    
-
-    
-    
+        return "Person [name=" + name + ", age=" + age + ", birthDate=" + birthDate + "]";
+    }    
 
 }
